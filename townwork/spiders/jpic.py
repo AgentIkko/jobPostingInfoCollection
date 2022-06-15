@@ -1,7 +1,7 @@
 import scrapy
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
-from townwork.items import TownworkItem
+from jpic.items import JpicItem
 import datetime, re
 
 salaryReHour = re.compile(r"時給(.+?)円")
@@ -21,9 +21,9 @@ def getSalary(salaryStr):
     return salaryNmHour, salaryNmMonth
 
 
-class KeywordsindeedSpider(scrapy.Spider):
+class JPIC_Spider(scrapy.Spider):
     
-    name = 'townwork'
+    name = 'jpic'
     allowed_domains = ['townwork.net']
     
     def start_requests(self):

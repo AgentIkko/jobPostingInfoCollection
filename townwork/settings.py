@@ -7,22 +7,17 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'townwork'
+BOT_NAME = 'jpic'   # job posting info collection
 
-SPIDER_MODULES = ['townwork.spiders']
-NEWSPIDER_MODULE = 'townwork.spiders'
+SPIDER_MODULES = ['jpic.spiders']
+NEWSPIDER_MODULE = 'jpic.spiders'
 FEED_EXPORT_ENCODING='utf-8'
-# FEED_URI='townwork_%(time)s.json'
 FEED_URI='townwork_%(time)s.json'
-# FEED_URI = 'openList_%(time)s.json'
-# FEED_URI = 'closeList_%(time)s.json'
-# Crawl responsibly by identifying yourself (and your website) on the user-agent
 DEFAULT_REQUEST_HEADERS = {
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
     'Accept-Language': 'en',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36'
 }
-# USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -91,7 +86,7 @@ COOKIES_ENABLED = False
 # Enable and configure HTTP caching (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
 # HTTPCACHE_ENABLED = True
-HTTPCACHE_ENABLED = False
+HTTPCACHE_ENABLED = True
 HTTPCACHE_EXPIRATION_SECS = 0
 HTTPCACHE_DIR = 'httpcache'
 HTTPCACHE_IGNORE_HTTP_CODES = []
